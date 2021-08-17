@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html>
+  
+      <head>
+          <meta charset="utf-8">
+          <meta name="description" content="alert">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Calculator</title>
+          <link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@700&display=swap" rel="stylesheet">
+          <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
+       <link rel="stylesheet" type="text/css" href="calculatorcss.css">         
+  
+      </head>
+    <body>
+      
+        <h1 class="float" >FLOATING   CALCULATOR</h1>
+        <form class="calculator" name="calc">  
+            <input type="text" name="input" class="value" readonly>
+            <span class="clear" onclick="document.calc.input.value =''">c</span>
+            <span class="no." onclick="document.calc.input.value +='/'" >/</span>
+            <span class="no." onclick="document.calc.input.value +='*'" >x</span>
+            <span class="no." onclick="document.calc.input.value +='7'" >7</span>
+            <span class="no." onclick="document.calc.input.value +='8'" >8</span>
+            <span class="no." onclick="document.calc.input.value +='9'" >9</span>
+            <span class="no." onclick="document.calc.input.value +='-'" >-</span>
+            <span class="no." onclick="document.calc.input.value +='4'" >4</span>
+            <span class="no." onclick="document.calc.input.value +='5'" >5</span>
+            <span class="no." onclick="document.calc.input.value +='6'" >6</span>
+            <span class="no." onclick="document.calc.input.value +='+'" >+</span>
+            <span class="no." onclick="document.calc.input.value +='1'" >1</span>
+            <span class="no." onclick="document.calc.input.value +='2'" >2</span>
+            <span class="no." onclick="document.calc.input.value +='3'" >3</span>
+            <span class="no." onclick="document.calc.input.value +='0'" >0</span>
+            <span class="no." onclick="document.calc.input.value +='00'" >00</span>
+            <span class="no." onclick="document.calc.input.value +='.'" >.</span>
+            <span class="equal" onclick="document.calc.input.value = eval(calc.input.value)" >=</span>
+       
+        </form> 
+        <footer>copyright &#169 2021 Anjani Sharma.</footer>
+        <script type="text/javascript" src="vanilla-tilt.js"></script>
+<script type="text/javascript">
+	VanillaTilt.init(document.querySelector(".calculator"), {
+		max: 25,
+		speed: 400
+	});
+  
+    </script>
+
+    </body>
+
+</html>
+
+
+<script>
+    // Do not use let or const keyword to initialize a javascript variable. Instead use var.
+        
+        function display(){
+            /* Fill  the Javascript code to display the message after calculation the fees */
+            var sname = document.getElementById('sname').value;
+            var dept = document.getElementById('deptname').value;
+            var chk = document.getElementById('firstGraduate').value;
+            var hostel= document.getElementsByName('preferHostel');
+            var admfee;
+            var tutionfee;
+            var hostelfee; 
+            
+            if(dept == "MBBS"){
+                 admfee  = 2300000;
+                 tutionfee = 90000;
+             }
+            else if(dept == "BDS"){
+                 admfee  = 1500000;
+                 tutionfee = 80000;
+             }
+             else  if(dept == "BHMS"){
+                 admfee  = 1250000;
+                 tutionfee = 95000;
+             }
+             for(i=0;i<hostel.length;i++){
+                 if(hostel[i].checked){
+                    var choice = hostel[i].value;
+                 }
+             }
+             var hostelfee;
+             if(choice == yes){
+                 hostelfee=960000;
+             }
+             else{
+                 hostelfee = 0;
+             }
+
+             var res;
+
+
+
+             if(chk == 'firstGraduate'){
+                res = admfee+tutionfee+hostelfee -25000;
+            }
+            else{
+                res = admfee+tutionfee+hostelfee;
+            }
+             document.getElementById('result').innerHTML = "''Hi"+sname+",\n"+"Your Admission Fee is Rs."+admfee+"\n Tution Fee is Rs."+tutionfee+"\n Hostel Fee is Rs."+hostelfee+"\n Total College Fee is Rs."+res;
+
+            
+            
+            return false;
+        }
+                
+    </script>
